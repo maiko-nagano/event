@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>イベント申込</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ ここから下に、ブラウザに表示したい内容を記述する ↓↓↓↓↓↓↓↓↓↓↓↓↓↓ -->
+    <div class="sidebar">
+      <a href="index.html">イベント申し込み</a>
+      <a href="mypage.html">マイページ</a>
+      <a href="#" id="logout-button">ログアウト</a> 
+    </div>
+    
+    <div class="container">
+      <div class="event-list">
+      <h1>イベント一覧</h1>
+      <input type="text" id="search-box" placeholder="開催地で検索">
+      <div id="event-list"></div>
+    </div>
+
+      <div class="form">
+      <h2>イベントに申し込む</h2>
+      <form id="registration-form">
+          <label for="event">イベントを選択:</label>
+          <select id="event" name="event"></select>
+          <br>
+          <label for="name">名前:</label>
+          <input type="text" id="name" name="name" required>
+          <br>
+          <label for="email">メールアドレス:</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+          <button type="submit">申し込む</button>
+      </form>
+    </div>
+    </div>
+  
+
+  <!-- モーダルウィンドウ -->
+  <div id="confirmation-modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>登録内容の確認</h2>
+          <p id="confirmation-details"></p>
+          <button id="confirm-button">確定する</button>
+      </div>
+  </div>
+
+
+
+    <!-- ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ ここから上に、ブラウザに表示したい内容を記述する ↑↑↑↑↑↑↑↑↑↑↑↑↑↑ -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/script.js"></script>
+
+  </body>
+</html>
