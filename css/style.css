@@ -19,7 +19,8 @@ body {
   flex-direction: column;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #444;
   font-weight: bold;
   font-size: 20px;
@@ -55,7 +56,9 @@ label {
   font-weight: bold;
 }
 
-input, select, button {
+input,
+select,
+button {
   margin-top: 5px;
   margin-bottom: 20px;
   padding: 10px;
@@ -104,21 +107,26 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; 
+  position: relative;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .close {
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
-  position: absolute; 
-  top: 10px; 
-  right: 10px; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .close:hover,
@@ -162,13 +170,14 @@ button:hover {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .cancel-button:hover {
   background-color: #CC0000;
 }
 
 .sidebar {
-  height: 100vh;
-  width: 250px;
+  height: 1500px;
+  width: 10%;
   position: fixed;
   top: 0;
   left: 0;
@@ -178,6 +187,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
 }
+
 .sidebar a {
   padding: 15px 25px;
   text-decoration: none;
@@ -188,6 +198,48 @@ button:hover {
   text-align: center;
   transition: background-color 0.3s;
 }
+
 .sidebar a:hover {
   background-color: #575757;
+}
+
+/* スマホ向けのスタイル */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: column; /* 横並びから縦並びに変更 */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .sidebar a {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%; /* リンクを幅いっぱいに広げる */
+    text-align: center;
+  }
+
+  .container {
+    margin-top: 60px; /* サイドバーの高さ分のマージンを追加 */
+    width: 100%;
+    padding: 10px;
+  }
+
+  .event-list, .form {
+    width: 100%;
+  }
+
+  h1, h2 {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  input, select, button {
+    width: 100%;
+    max-width: none;
+  }
 }
